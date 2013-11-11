@@ -10,7 +10,7 @@ There are some basic examples included for a MongoDB, REST and external MySQL co
 
 This module is Work In Process, and some things are likely to change!!!!
 
-##ExternalDataObject.php
+##ExternalDataObject
 This is the base Object you need to extend you Model from.
 A lot of code is copied from DataObject.php so things like SummaryFields, FormScaffolding and $form->saveInto() just works like DataObject.
 Therefore you still need to add a static $db array, like you do for normal DataObjects.
@@ -53,4 +53,9 @@ Therefore you still need to add a static $db array, like you do for normal DataO
 	  	}
 	  }
   
-  
+
+##ExternalDataAdmin
+Extends ModelAdmin, but a few custom GridField Components are replaced to make sure the GridField can work with external data.
+The SearchScaffolder is stripped out, since this is not that easy to implement when you don't know the external datasource and structure.
+
+
