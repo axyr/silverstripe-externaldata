@@ -17,6 +17,7 @@ Therefore you still need to add a static $db array, like you do for normal DataO
 
 ###Example
   :::php
+  
   class MyExternalDataObject extends ExternalDataObject {
 	
   	static $db = array(
