@@ -10,6 +10,18 @@ There are some basic examples included for a MongoDB, REST and external MySQL co
 
 This module is Work In Process, and some things are likely to change!!!!
 
+####Things that work :
+ - Create, Read, Update, Delete
+ - FormScaffolding
+ - FieldCasting
+ - Summary Fields
+ - FieldLabels
+ - Limited canView, canEdit checks
+
+####Things that don't work :
+ - HasOne, HasMany, ManyMany relations
+ - SearchFormScaffolding
+
 ##ExternalDataObject
 This is the base Object you need to extend you Model from.
 A lot of code is copied from DataObject.php so things like SummaryFields, FormScaffolding and $form->saveInto() just works like DataObject.
@@ -17,7 +29,6 @@ Therefore you still need to add a static $db array, like you do for normal DataO
 
 ###Example
   
-  :::php
   
 	  class MyExternalDataObject extends ExternalDataObject {
 		
