@@ -21,6 +21,7 @@ Therefore you still need to add a static $db array, like you do for normal DataO
   
 	  class MyExternalDataObject extends ExternalDataObject {
 		
+		// you need this to make FormScaffolding work
 	  	static $db = array(
 	  		'Title'	=> 'Varchar(255)'
 	  	);
@@ -74,4 +75,10 @@ This examples just connects local to Director::absoluteBaseURL() . 'api/v1' and 
 
 The **ExternalMySQLDataObject** example uses also the RestDataObject table.
 You need to set the static $remote_database_config variable with the correct database credentials.
+
+## function getID()
+The ExternalDataObject still requires an ID value for you external records to make CRUD work.
+Some datasources, like MongoDB, allows an object to be the unique identifier, and an identifier might also be a string.
+Use this method to convert your external datasource unique identifier to a $this->ID value.
+
 
