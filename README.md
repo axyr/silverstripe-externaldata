@@ -62,13 +62,15 @@ The SearchScaffolder is stripped out, since this is not that easy to implement w
 ##Examples
 I added some basic examples in the examples folder, which you can also test in frontend with ExternalDataPage.
 
-Note that MongoDBExternalDataObject requires the PHP MongoDB extension :
+Note that **MongoDBExternalDataObject** requires the PHP MongoDB extension :
+
 http://www.php.net/manual/en/book.mongo.php
 
-The ExternalRestDataObject requires the RestFullserver module :
+The **ExternalRestDataObject** requires the RestFullserver module :
+
 https://github.com/silverstripe/silverstripe-restfulserver
 This examples just connects local to Director::absoluteBaseURL() . 'api/v1' and quries the RestDataObject table
 
-The ExternalMySQLDataObject example uses also the RestDataObject table.
+The **ExternalMySQLDataObject** example uses also the RestDataObject table.
 You need to set the static $remote_database_config variable with the correct database credentials.
 
