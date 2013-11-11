@@ -16,6 +16,7 @@ A lot of code is copied from DataObject.php so things like SummaryFields, FormSc
 Therefore you still need to add a static $db array, like you do for normal DataObjects.
 
 ###Example
+  
   :::php
   
   class MyExternalDataObject extends ExternalDataObject {
