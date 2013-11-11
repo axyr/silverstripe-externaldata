@@ -69,6 +69,7 @@ http://www.php.net/manual/en/book.mongo.php
 The **ExternalRestDataObject** requires the RestFullserver module :
 
 https://github.com/silverstripe/silverstripe-restfulserver
+
 This examples just connects local to Director::absoluteBaseURL() . 'api/v1' and quries the RestDataObject table
 
 The **ExternalMySQLDataObject** example uses also the RestDataObject table.
