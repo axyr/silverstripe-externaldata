@@ -8,38 +8,27 @@
  */
 
 abstract class ExternalDataAdmin extends ModelAdmin {
-	static $url_segment 	= 'externaldataadmin';
-	static $menu_title 	= 'External Data';
+	static $url_segment 	= '';
+	static $menu_title 		= 'External Data';
 	static $page_length 	= 10;
 	static $default_model 	= '';	
 	
 	static $managed_models	= array(
-		/*'MongoDataObject',
-		'ExternalRestDataObject',
-		'ExternalMySQLDataObject'*/
 	);	
 	
 	public function getEditForm($id = null, $fields = null) {
 		$list = $this->getList();
-		
-		//var_dump($list);
-		
-		//$exportButton = new GridFieldExportButton('before');
-		//$exportButton->setExportColumns($this->getExportFields());
-		//var_dump($this->sanitiseClassName($this->modelClass));
+
 		$listField = GridField::create(
 			$this->sanitiseClassName($this->modelClass),
 			false,
 			$list,
 			$fieldConfig = GridFieldConfig_RecordEditor::create($this->stat('page_length'))
-				//->addComponent($exportButton)
 				->removeComponentsByType('GridFieldFilterHeader')
 				->removeComponentsByType('GridFieldDetailForm')
 				->removeComponentsByType('GridFieldDeleteAction')
-				
 				->addComponents(new ExternalDataGridFieldDetailForm())
 				->addComponents(new ExternalDataGridFieldDeleteAction())
-				//->addComponents(new GridFieldPrintButton('before'))
 		);
 
 		// Validation
