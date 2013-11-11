@@ -19,38 +19,38 @@ Therefore you still need to add a static $db array, like you do for normal DataO
   
   :::php
   
-  class MyExternalDataObject extends ExternalDataObject {
-	
-  	static $db = array(
-  		'Title'	=> 'Varchar(255)'
-  	);
-  	
-  	public static function get() {
-  		$list = parent::get();
-  		
-  		// add your code to get a $result of remote records
-  		// ExternalDataAdmins GridField will use this list as well to get 1 item from the list
-  		foreach($result as $item) {
-  			$list->push(new MyExternalDataObject($item));
-  		}
-  		
-  		return $list;	
-  	}
-  	
-  	public static function get_by_id($id) {
-  		// add your code to get one remote record
-  		// This is used in the ExternalDataPage example	
-  	}
-  	
-  	public function write() {
-  		// add your code to write/update a remote record
-  	}
-  	
-  	public function delete() {
-  		// add your code to delete a remote record
-  		$this->flushCache();
-  		$this->ID = '';
-  	}
-  }
+	  class MyExternalDataObject extends ExternalDataObject {
+		
+	  	static $db = array(
+	  		'Title'	=> 'Varchar(255)'
+	  	);
+	  	
+	  	public static function get() {
+	  		$list = parent::get();
+	  		
+	  		// add your code to get a $result of remote records
+	  		// ExternalDataAdmins GridField will use this list as well to get 1 item from the list
+	  		foreach($result as $item) {
+	  			$list->push(new MyExternalDataObject($item));
+	  		}
+	  		
+	  		return $list;	
+	  	}
+	  	
+	  	public static function get_by_id($id) {
+	  		// add your code to get one remote record
+	  		// This is used in the ExternalDataPage example	
+	  	}
+	  	
+	  	public function write() {
+	  		// add your code to write/update a remote record
+	  	}
+	  	
+	  	public function delete() {
+	  		// add your code to delete a remote record
+	  		$this->flushCache();
+	  		$this->ID = '';
+	  	}
+	  }
   
   
