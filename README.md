@@ -5,7 +5,7 @@ Custom DataObject/ModelAdmin implementation to work with external data sources
 
 The aim is have an easy way to use ModelAdmin and GridField with data from external datasources.
 
-Just create a Model which extends ExternalDataObject and implement your own get(), write() and delete() methods to work with your custom external data connection.
+Just create a Model which extends ExternalDataObject and implement your own `get()`, `write()` and `delete()` methods to work with your custom external data connection.
 There are some basic examples included for a MongoDB, REST and external MySQL connection.
 
 This module is Work In Process, and some things are likely to change!!!!
@@ -24,8 +24,8 @@ This module is Work In Process, and some things are likely to change!!!!
 
 ##ExternalDataObject
 This is the base Object you need to extend you Model from.
-A lot of code is copied from DataObject.php so things like SummaryFields, FormScaffolding and $form->saveInto() just works like DataObject.
-Therefore you still need to add a static $db array, like you do for normal DataObjects.
+A lot of code is copied from DataObject.php so things like SummaryFields, FormScaffolding and `$form->saveInto()` just works like DataObject.
+Therefore you still need to add a static `$db` array, like you do for normal DataObjects.
 
 ###Example
   
@@ -82,14 +82,14 @@ The **ExternalRestDataObject** requires the RestFullserver module :
 
 https://github.com/silverstripe/silverstripe-restfulserver
 
-This examples just connects local to Director::absoluteBaseURL() . 'api/v1' and quries the RestDataObject table
+This examples just connects local to `Director::absoluteBaseURL() . 'api/v1'` and queries the RestDataObject table
 
 The **ExternalMySQLDataObject** example uses also the RestDataObject table.
-You need to set the static $remote_database_config variable with the correct database credentials.
+You need to set the static `$remote_database_config` variable with the correct database credentials.
 
 ## function getID()
 The ExternalDataObject still requires an ID value for you external records to make CRUD work.
 Some datasources, like MongoDB, allows an object to be the unique identifier, and an identifier might also be a string.
-Use this method to convert your external datasource unique identifier to a $this->ID value.
+Use this method to convert your external datasource unique identifier to a `$this->ID` value.
 
 
