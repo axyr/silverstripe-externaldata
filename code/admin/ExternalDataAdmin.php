@@ -7,16 +7,16 @@
  * @author     Martijn van Nieuwenhoven <info@axyrmedia.nl>
  */
 
-class ExternalDataAdmin extends ModelAdmin {
+abstract class ExternalDataAdmin extends ModelAdmin {
 	static $url_segment 	= 'externaldataadmin';
-	static $menu_title 		= 'External Data';
+	static $menu_title 	= 'External Data';
 	static $page_length 	= 10;
 	static $default_model 	= '';	
 	
 	static $managed_models	= array(
-		'MongoDataObject',
+		/*'MongoDataObject',
 		'ExternalRestDataObject',
-		'ExternalMySQLDataObject'
+		'ExternalMySQLDataObject'*/
 	);	
 	
 	public function getEditForm($id = null, $fields = null) {
