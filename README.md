@@ -73,6 +73,7 @@ The SearchScaffolder is stripped out, since this is not that easy to implement w
 
 ##Examples
 I added some basic examples in the examples folder, which you can also test in frontend with ExternalDataPage.
+If you just want to use them after downloading, just remove the `_manifest_exclude` file.
 
 Note that **MongoDBExternalDataObject** requires the PHP MongoDB extension :
 
