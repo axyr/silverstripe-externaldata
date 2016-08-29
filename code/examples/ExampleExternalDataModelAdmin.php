@@ -1,6 +1,6 @@
 <?php
 
-class ExampleExternalDataModelAdmin extends ExternalModelAdmin {
+class ExampleExternalDataModelAdmin extends ExternalDataAdmin {
 	
 	static $url_segment 	= 'externaldataadmin';
 	static $menu_title 		= 'External Data';
