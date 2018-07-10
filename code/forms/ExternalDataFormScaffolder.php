@@ -6,7 +6,7 @@
  * @uses DBField::scaffoldFormField()
  * @uses ExternalDataObject::fieldLabels()
  */
-class ExternalDataFormScaffolder extends Object {
+class ExternalDataFormScaffolder extends SS_Object {
 	
 	/**
 	 * @var DataObject $obj The object defining the fields to be scaffolded

@@ -15,12 +15,12 @@ class ExternalDataGridFieldDetailForm extends GridFieldDetailForm {
 		if($request->param('ID') && $request->param('ID') != 'new') {
 			$record = $gridField->getList()->byId($request->param("ID"));
 		} else {
-			$record = Object::create($gridField->getModelClass());	
+			$record = SS_Object::create($gridField->getModelClass());
 		}
 
 		$class = $this->getItemRequestClass();
 
-		$handler = Object::create($class, $gridField, $this, $record, $controller, $this->name);
+		$handler = SS_Object::create($class, $gridField, $this, $record, $controller, $this->name);
 		$handler->setTemplate($this->template);
 
 		return $handler->handleRequest($request, DataModel::inst());
